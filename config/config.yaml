@@ -1,0 +1,39 @@
+qa_path: "/work/gg0302/g260141/RAG/custom_qa_dataset_train_large_tab.txt"
+wiki_passages_path: "./wiki_passages.jsonl"
+faiss_index_path: "./wiki_faiss.index"
+embedding_path: "./wiki_faiss.index.npy"
+model_name: "distilgpt2"
+retriever_model_name: "sentence-transformers/all-MiniLM-L6-v2"
+
+learning_rate_gpt: 5e-5
+learning_rate_retriever: 5e-5
+batch_size: 4
+num_train_epochs: 60
+checkpoint_epoch: null
+top_k: 4
+max_length: 256
+
+output_dir: "./fine_tuned_model"
+use_ddp: false
+save_each_epoch: true
+validation_questions:
+  - "What is anarchism?"
+  - "Who was Albert Einstein?"
+  - "What are black holes?"
+  - "Define quantum mechanics."
+  - "What is the capital of France?"
+  - "Explain the theory of evolution."
+  - "What is machine learning?"
+  - "Who wrote 'Pride and Prejudice'?"
+  - "What is the speed of light?"
+  - "Describe the function of mitochondria."
+
+penalties:
+  ngram_repeat:
+    n: 3
+    weight: 0.1
+  keyword_overlap:
+    weight: 4
+  short_answer:
+    min_words: 4
+    weight: 5
