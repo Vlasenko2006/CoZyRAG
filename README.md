@@ -13,8 +13,9 @@ CoZyRAG stands for **Contextual Zero-Yawn Retrieval Augmented Generation**. It's
 - **MLflow**: Optional experiment tracking—because you know you love those metrics.
 - **Sentence Transformers**: For context filtering so sharp, it could slice bread.
 
-### Minimalistic Model Set
+### Minimalistic Model and Data Sets
 - Prons: Lightweighted, easy to grasp and train, minimal hardware requests.
+- - The current setting use GPT2 Distilled model, which is at least 2 times smaller than the smallest original GPT2 model. The idea of the 
 - Cons: Short answers, very dependent on hyperparameters
 
 ### Run-able under CPU on a home desktop?
