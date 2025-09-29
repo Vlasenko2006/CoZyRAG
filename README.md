@@ -14,8 +14,8 @@ CoZyRAG stands for **Contextual Zero-Yawn Retrieval Augmented Generation**. It's
 - **Sentence Transformers**: For context filtering so sharp, it could slice bread.
 
 ### Minimalistic Model Set
-Prons: Lightweighted, easy to grasp and train, minimal hardware requests.
-Cons: Short answers, very dependent on hyperparameters
+- Prons: Lightweighted, easy to grasp and train, minimal hardware requests.
+- Cons: Short answers, very dependent on hyperparameters
 
 ### Run-able under CPU on a home desktop?
 
