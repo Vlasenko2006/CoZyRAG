@@ -1,6 +1,6 @@
 # 🛋️ CoZyRAG: Contextual Zero-Yawn Retrieval Augmented Generation
 
-Welcome to my homemade Contextual Zero-Yawn Retrieval Augmented Generation **CoZyRAG**, the only AI model brave enough to answer questions, retrieve context, and still have time for a nap on the digital couch! 
+Welcome to my homemade cozzy Contextual Zero-Yawn Retrieval Augmented Generation **CoZyRAG**, the only AI model brave enough to answer questions, retrieve context, and still have time for a nap on the digital couch! 
 
 ### What is CoZyRAG?
 
@@ -12,13 +12,30 @@ CoZyRAG stands for **Contextual Zero-Yawn Retrieval Augmented Generation**. It's
 - **Penalties**: N-gram repeats? Keyword overlaps? Short answers? Not in this house!
 - **MLflow**: Optional experiment tracking—because you know you love those metrics.
 - **Sentence Transformers**: For context filtering so sharp, it could slice bread.
-
 ### Minimalistic Model and Data Sets
-- Prons: Lightweighted, easy to grasp and train, minimal hardware requests.
-- - The current setting use GPT2 Distilled model, which is at least 2 times smaller than the smallest original GPT2 model. The idea of the 
-- Cons: Short answers, very dependent on hyperparameters
 
-### Run-able under CPU on a home desktop?
+**Model Set**  
+To minimize computational resources while maintaining strong performance, we use the pretrained `GPT2 Distilled` model as the LLM and `all-MiniLM-L6-v2` as the retriever.  
+The `GPT2 Distilled` model, with 84M parameters, is at least twice as compact as the smallest original GPT-2. Although its text generation and answering capabilities are somewhat reduced compared to the full GPT-2, the distillation process allows it to inherit most of the essential functionality of the original model.  
+The `all-MiniLM-L6-v2` is a BERT-style retriever with 6 layers and just 22M parameters. Due to its compact size, it can process requests up to 384 tokens (about 128 words), yet it reliably retrieves relevant texts from the provided corpus.  
+Both neural networks are pretrained and further fine-tuned during training:  
+- The LLM (`GPT2 Distilled`) answers questions based on retrieved texts.  
+- The retriever (`all-MiniLM-L6-v2`) generates valuable context for the LLM.
+
+**Data Set**  
+The dataset consists of simple Q/A pairs: each question is one sentence, each answer is one word or one sentence. The retrieval corpus is based on Wikipedia text.
+
+- **Pros:**  
+  The `GPT2 Distilled` - `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure.
+
+- **Cons:**  
+  It typically generates answers of one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
+
+---
+
+### Can It Run on a CPU Home Desktop?
+
+Yes, it’s true that running an LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
 
 
 ### Features
