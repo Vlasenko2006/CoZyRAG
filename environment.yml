@@ -1,0 +1,18 @@
+name: cozyrag
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9
+  - pytorch>=1.10
+  - torchvision
+  - cudatoolkit
+  - numpy
+  - tqdm
+  - transformers
+  - faiss-cpu
+  - sentence-transformers
+  - pip
+  - pip:
+      - mlflow
