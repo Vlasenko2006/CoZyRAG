@@ -45,6 +45,32 @@ Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still requ
 - **Cons:**  
   Due to the simple dataset, the system typically generates answers of one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
 ---
+### Examples
+
+Below are examples of answers obtained during the validation stage. None of the questions (or corresponding information) appeared in the training set.
+
+**Q: Who was Albert Einstein?**  
+A1: German physicist  
+A2: American physicist  
+A3: The first Nobel Prize winner  
+A4: Pioneer in the theory of general relativity
+
+**Q: What is machine learning?**  
+A1: Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical models
+
+**Q: What are black holes?**  
+A1: The black hole is a class of astronomical objects that have undergone gravitational collapse  
+A2: A class of astronomical objects with no net positive charge
+
+**Q: Describe the function of mitochondria.**  
+A1: The production of ATP
+
+### Comment
+
+The answers to the first question are generally correct, except for A3: the **first** Nobel Prize winner was Wilhelm Conrad Röntgen. A1 for the second question and A2 for the third question are not entirely accurate, but notably, these responses reflect exactly what the retriever fetched from the Wikipedia corpus at the time the model was trained. In this case, both the LLM and retriever demonstrated coherent and expected performance—the inaccuracies highlight the need for corrections in the Wikipedia articles themselves.
+
+Summarizing the validation results:  
+The LLM-Retriever pair in CoZyRAG works as intended, correctly answering most questions, though it cannot generate large or highly detailed responses. Using a different dataset with more comprehensive answers and a larger LLM may improve this limitation.
 
 ### Can It Run on a CPU Home Desktop?
 
