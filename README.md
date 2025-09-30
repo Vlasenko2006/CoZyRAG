@@ -29,9 +29,11 @@ The dataset consists of 89K simple Q/A pairs: each question is one sentence, eac
 
 **Q:** To whom did the Virgin Mary allegedly appear in 1858 in Lourdes France? 
 **A:** Saint Bernadette Soubirous
+
 **Q:** What is in front of the Notre Dame Main Building?
 **A:** a copper statue of Christ
-**Q:** How often is Notre Dame's the Juggler published?        
+
+**Q:** How often is Notre Dame's the Juggler published? 
 **A:** twice
 
 ### Generalization Capabilities Without RAG
