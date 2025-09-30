@@ -16,7 +16,7 @@ CoZyRAG stands for **Contextual Zero-Yawn Retrieval Augmented Generation**. It's
 
 ### Model Set
 
-To minimize computational resources while maintaining strong performance, we use the pretrained `GPT2 Distilled` model as the LLM and `all-MiniLM-L6-v2` as the retriever.  
+CoZyRAG offers flexibility in choosing any LLM and retriever model. However, to minimize computational resources while maintaining strong performance, we use the pretrained `GPT2 Distilled` model as the LLM and `all-MiniLM-L6-v2` as the retriever. 
 The `GPT2 Distilled` model, with 84M parameters, is at least twice as compact as the smallest original GPT-2. Although its text generation and answering capabilities are somewhat reduced compared to the full GPT-2, the distillation process allows it to inherit most essential functionality from the original model.  
 The `all-MiniLM-L6-v2` is a BERT-style retriever with 6 layers and just 22M parameters. Thanks to its compact size, it can process requests up to 384 tokens (about 128 words), yet it reliably retrieves relevant texts from the provided corpus.  
 Both neural networks are pretrained and further fine-tuned during training:
@@ -25,7 +25,7 @@ Both neural networks are pretrained and further fine-tuned during training:
 
 ### Data Set
 
-The dataset consists of 89K simple Q/A pairs: each question is one sentence, each answer is one word group, of words or one sentence. The retrieval corpus is comprised of Wikipedia articles.Here is the example of the Q/A in the dataset:
+The dataset consists of 89K simple Q/A pairs: each question is one sentence, each answer is one word, group of words or one sentence. The retrieval corpus is comprised of Wikipedia articles.Here is the example of the Q/A in the dataset:
 
 **Q:** To whom did the Virgin Mary allegedly appear in 1858 in Lourdes France? 
 **A:** Saint Bernadette Soubirous
@@ -126,6 +126,10 @@ pip install -r requirements.txt
 See `python your_cozyrag_script.py --help` for options.
 
 ---
+### Quik start
+
+Get and prepare Q/A dataset as described here: [QA-bot](https://github.com/Vlasenko2006/QA_bot)
+Get and prepare Wikipedia corpus as described here [wikiextractor](https://github.com/attardi/wikiextractor)
 
 ### Disclaimer
 
