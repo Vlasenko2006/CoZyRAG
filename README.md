@@ -25,7 +25,14 @@ Both neural networks are pretrained and further fine-tuned during training:
 
 ### Data Set
 
-The dataset consists of 20K simple Q/A pairs: each question is one sentence, each answer is one word or one sentence. The retrieval corpus is comprised of Wikipedia articles.
+The dataset consists of 89K simple Q/A pairs: each question is one sentence, each answer is one word group, of words or one sentence. The retrieval corpus is comprised of Wikipedia articles.Here is the example of the Q/A in the dataset:
+
+**Q:** To whom did the Virgin Mary allegedly appear in 1858 in Lourdes France? 
+**A:** Saint Bernadette Soubirous
+**Q:** What is in front of the Notre Dame Main Building?
+**A:** a copper statue of Christ
+**Q:** How often is Notre Dame's the Juggler published?        
+**A:** twice
 
 ### Generalization Capabilities Without RAG
 
@@ -40,7 +47,7 @@ RAG (Retrieval-Augmented Generation) is designed to supply the LLM with required
 Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still require fine-tuning, and are alternately tuned together.
 
 - **Pros:**  
-  The `GPT2 Distilled` and `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure. It can generalize context from the retriever and generate coherent answers.
+  The `GPT2 Distilled` and `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure. It can generalize context from the retriever and generate coherent answers. One sentence - one word answers simplifies training.
 
 - **Cons:**  
   Due to the simple dataset, the system typically generates answers of one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
