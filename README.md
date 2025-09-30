@@ -93,6 +93,32 @@ It’s true that running a LLM on a standard home desktop CPU is uncommon, but C
 - Multi-GPU distributed training. Because why suffer alone?
 - Easy to run, easier to break (please don’t).
 
+# Code Structure
+
+# Module Overview
+
+1. **`Rag_main.py`**  
+   The main driver program. Loads configurations from `conf/config.yaml` and starts the RAG pipeline.
+
+2. **`RAGQADataset.py`**  
+   Dataset class responsible for creating the training dataset, including QA pairs and RAG prompts.
+
+3. **`build_or_load_faiss_index.py`**  
+   Builds or loads Facebook AI Similarity Search (FAISS) indexes required by the retriever.
+
+4. **`fine_tune_rag_ddp.py`**  
+   Training subroutine that fine-tunes and saves checkpoints for both the GPT model and the retriever.
+
+5. **`generate_rag_answer.py`**  
+   Generates human-readable GPT answers by converting tokens to words and removing internal tokens.
+
+6. **`postprocess_generated_answer.py`**  
+   Used by `generate_rag_answer.py` to filter internal tokens such as `<SEP>`, etc.
+
+7. **`my_loss_functions.py`**  
+   Custom loss functions for training—self-explanatory.
+
+
 ## How to Get Cozy
 
 1. Prepare your environment (see below).
