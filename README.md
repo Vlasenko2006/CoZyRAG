@@ -126,11 +126,27 @@ pip install -r requirements.txt
 See `python your_cozyrag_script.py --help` for options.
 
 ---
-# Quik start
+# Quick Start
 
-Get and prepare Q/A dataset as described here: [QA-bot](https://github.com/Vlasenko2006/QA_bot). Run the script `convert_qa_format.py`. It will convert Q/A pairs from Q/A-bot format to the format used by CoZyRAG.  
+1. **Prepare the Q/A Dataset**  
+   Get and prepare the Q/A dataset as described in [QA-bot](https://github.com/Vlasenko2006/QA_bot).  
+   Run the script `convert_qa_format.py` to convert Q/A pairs from the QA-bot format to the format used by CoZyRAG.  
+   Ensure that the paths and names of the input and output directories match those of your QA files and the ones you intend to use in your model.
 
-Get and prepare Wikipedia corpus as described here [wikiextractor](https://github.com/attardi/wikiextractor) Run the script chunking_and_indexcing.py. It will split the extracted Wikipedia corpus into small chunks with uniqie ID, Title, and contnt (up to 30 cheracters). This significantly simplifies retriever's work.
+2. **Prepare the Wikipedia Corpus**  
+   Download and extract the Wikipedia corpus as described in [wikiextractor](https://github.com/attardi/wikiextractor).  
+   Run the script `chunking_and_indexcing.py` to split the extracted Wikipedia corpus into small chunks with unique ID, Title, and content (minimum 30 characters).  
+   This step simplifies the retriever's work.
+
+3. **Create Indexes for the Retriever**  
+   Create indexes from these chunks for the retriever.  
+   You only need to do this once.  
+   Run the `exec.bash` script, adjusting it for your HPC environment.
+
+4. **Start the RAG Pipeline**  
+   Adjust the `exec.bash` script for your HPC system, and run it to start the RAG pipeline.
+
+5. **Enjoy the Results!**
 
 # Disclaimer
 
