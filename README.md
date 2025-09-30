@@ -161,8 +161,7 @@ See `python your_cozyrag_script.py --help` for options.
 
 2. **Prepare the Wikipedia Corpus**  
    Download and extract the Wikipedia corpus as described in [wikiextractor](https://github.com/attardi/wikiextractor).  
-   Run the script `chunking_and_indexcing.py` to split the extracted Wikipedia corpus into small chunks with unique ID, Title, and content (minimum 30 characters).  
-   This step simplifies the retriever's work.
+   Run the script `chunking_and_indexcing.py` to split the extracted Wikipedia corpus into small chunks with unique ID, Title, and content (minimum 30 characters). This step simplifies the retriever's work.
 
 3. **Create Indexes for the Retriever**  
    Create indexes from these chunks for the retriever.  
