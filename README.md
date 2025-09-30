@@ -128,8 +128,9 @@ See `python your_cozyrag_script.py --help` for options.
 ---
 ### Quik start
 
-Get and prepare Q/A dataset as described here: [QA-bot](https://github.com/Vlasenko2006/QA_bot)
-Get and prepare Wikipedia corpus as described here [wikiextractor](https://github.com/attardi/wikiextractor)
+Get and prepare Q/A dataset as described here: [QA-bot](https://github.com/Vlasenko2006/QA_bot). Run the script `convert_qa_format.py`. It will convert Q/A pairs from Q/A-bot format to the format used by CoZyRAG.  
+
+Get and prepare Wikipedia corpus as described here [wikiextractor](https://github.com/attardi/wikiextractor) Run the script chunking_and_indexcing.py. It will split the extracted Wikipedia corpus into small chunks with uniqie ID, Title, and contnt (up to 30 cheracters). This significantly simplifies retriever's work.
 
 ### Disclaimer
 
