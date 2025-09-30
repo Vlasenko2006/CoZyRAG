@@ -93,8 +93,6 @@ It’s true that running a LLM on a standard home desktop CPU is uncommon, but C
 - Multi-GPU distributed training. Because why suffer alone?
 - Easy to run, easier to break (please don’t).
 
-# Code Structure
-
 # Module Overview
 
 1. **`Rag_main.py`**  
