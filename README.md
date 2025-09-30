@@ -48,7 +48,7 @@ Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still requ
 
 ### Can It Run on a CPU Home Desktop?
 
-Yes, it’s true that running an LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
+It’s true that running a LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup still makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
 
 
 ### Features
