@@ -14,7 +14,7 @@ CoZyRAG stands for **Contextual Zero-Yawn Retrieval Augmented Generation**. It's
 - **Sentence Transformers**: For context filtering so sharp, it could slice bread.
 ### Minimalistic Model and Data Sets
 
-### Model Set
+## Model Set
 
 CoZyRAG offers flexibility in choosing any LLM and retriever model. However, to minimize computational resources while maintaining strong performance, we use the pretrained `GPT2 Distilled` model as the LLM and `all-MiniLM-L6-v2` as the retriever. 
 The `GPT2 Distilled` model, with 84M parameters, is at least twice as compact as the smallest original GPT-2. Although its text generation and answering capabilities are somewhat reduced compared to the full GPT-2, the distillation process allows it to inherit most essential functionality from the original model.  
@@ -86,23 +86,23 @@ The LLM-Retriever pair in CoZyRAG works as intended, correctly answering most qu
 It’s true that running a LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup still makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
 
 
-### Features
+## Features
 
 - Alternates training between retriever and generator like a relay race, but with more existential dread.
 - Custom penalties for bad behavior. (No, really, it keeps your model honest.)
 - Multi-GPU distributed training. Because why suffer alone?
 - Easy to run, easier to break (please don’t).
 
-### How to Get Cozy
+## How to Get Cozy
 
 1. Prepare your environment (see below).
-2. Bring your own QA data and wiki passages.
-3. Build your FAISS index.
+2. Bring your own QA data and wiki passages(see below).
+3. Build your FAISS index(see below).
 4. Train like a champion, sleep like a winner.
 
 ---
 
-### Installation
+# Installation
 
 #### Conda
 
@@ -126,13 +126,13 @@ pip install -r requirements.txt
 See `python your_cozyrag_script.py --help` for options.
 
 ---
-### Quik start
+# Quik start
 
 Get and prepare Q/A dataset as described here: [QA-bot](https://github.com/Vlasenko2006/QA_bot). Run the script `convert_qa_format.py`. It will convert Q/A pairs from Q/A-bot format to the format used by CoZyRAG.  
 
 Get and prepare Wikipedia corpus as described here [wikiextractor](https://github.com/attardi/wikiextractor) Run the script chunking_and_indexcing.py. It will split the extracted Wikipedia corpus into small chunks with uniqie ID, Title, and contnt (up to 30 cheracters). This significantly simplifies retriever's work.
 
-### Disclaimer
+# Disclaimer
 
 CoZyRAG is not responsible for:
 - Sudden naps induced by long training epochs.
