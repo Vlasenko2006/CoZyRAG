@@ -52,7 +52,7 @@ Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still requ
   The `GPT2 Distilled` and `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure. It can generalize context from the retriever and generate coherent answers. One-sentence, one-word answers simplify training.
 
 - **Cons:**  
-  Due to the simplicity of the dataset, the system typically generates answers of one word or one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
+  Due to the simplicity of the dataset and the GPT distilled model, the system typically generates simple answers of one word or one full sentence, rarely two. No long stories yet... The system is highly sensitive to hyperparameters, and achieving optimal accuracy requires their careful selection.
 ---
 ### Examples
 
