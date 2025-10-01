@@ -25,7 +25,7 @@ Both neural networks are pretrained and further fine-tuned during training:
 
 ### Data Set
 
-The dataset consists of 89K simple Q/A pairs: each question is one sentence, each answer is one word, group of words or one sentence. The retrieval corpus is comprised of Wikipedia articles.Here is the example of the Q/A in the dataset:
+The dataset consists of 89K simple Q/A pairs: each question is one sentence, each answer is one word, a group of words, or one sentence. The retrieval corpus is comprised of Wikipedia articles. Here is an example of the Q/A in the dataset:
 
 **Q:** To whom did the Virgin Mary allegedly appear in 1858 in Lourdes, France?  
 **A:** Saint Bernadette Soubirous
@@ -46,13 +46,13 @@ RAG (Retrieval-Augmented Generation) is designed to supply the LLM with required
 
 ### My Case
 
-Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still require fine-tuning, and are alternately tuned together.
+Both `GPT2 Distilled` and `all-MiniLM-L6-v2` are pretrained, but both still require fine-tuning and are alternately tuned together.
 
 - **Pros:**  
-  The `GPT2 Distilled` and `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure. It can generalize context from the retriever and generate coherent answers. One sentence - one word answers simplifies training.
+  The `GPT2 Distilled` and `all-MiniLM-L6-v2` pair is lightweight, easy to understand and train, requires minimal hardware, and forms a minimal working RAG (Retrieval-Augmented Generation) infrastructure. It can generalize context from the retriever and generate coherent answers. One-sentence, one-word answers simplify training.
 
 - **Cons:**  
-  Due to the simple dataset, the system typically generates answers of one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
+  Due to the simplicity of the dataset, the system typically generates answers of one full sentence, rarely two. Achieving optimal accuracy requires careful selection of hyperparameters.
 ---
 ### Examples
 
@@ -81,9 +81,9 @@ The answers to the first question are generally correct, except for A3: the **fi
 Summarizing the validation results:  
 The LLM-Retriever pair in CoZyRAG works as intended, correctly answering most questions, though it cannot generate large or highly detailed responses. Using a different dataset with more comprehensive answers and a larger LLM may improve this limitation.
 
-### Can It Run on a CPU Home Desktop?
+### Can It Run on a home desktop with CPU?
 
-It’s true that running a LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup still makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
+It’s true that running an LLM on a standard home desktop CPU is uncommon, but CoZyRAG’s minimalistic setup still makes it possible. Training for one epoch on a dataset of 20K Q/A pairs may take more than a day, so it's feasible, but patience is required—you may need to wait a couple of days for the first results.
 
 
 ## Features
@@ -99,7 +99,7 @@ It’s true that running a LLM on a standard home desktop CPU is uncommon, but C
    The main driver program. Loads configurations from `conf/config.yaml` and starts the RAG pipeline.
 
 2. **`RAGQADataset.py`**  
-   Dataset class responsible for creating the training dataset, including QA pairs and RAG prompts.
+   The Dataset class is responsible for creating the training dataset, including QA pairs and RAG prompts.
 
 3. **`build_or_load_faiss_index.py`**  
    Builds or loads Facebook AI Similarity Search (FAISS) indexes required by the retriever.
