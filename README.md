@@ -83,7 +83,7 @@ A1: The production of ATP
 
 ### Comment
 
-The answers to the first question are generally correct, except for A3: the **first** Nobel Prize winner was Wilhelm Conrad Röntgen. A1 for the second question and A2 for the third question are not entirely accurate, but notably, these responses reflect exactly what the retriever fetched from the Wikipedia corpus at the time the model was trained. In this case, both the LLM and retriever demonstrated coherent and expected performance—the inaccuracies highlight the need for corrections in the Wikipedia articles themselves.
+The answers to the first question are generally correct, except for A3: the **first** Nobel Prize winner was Wilhelm Conrad Röntgen. Answers A1 and A2 for the second and the third question are not entirely accurate, but notably, these responses reflect exactly what the retriever fetched from the Wikipedia corpus. In this case, both the LLM and retriever demonstrated coherent and expected performance—the inaccuracies highlight the need for corrections in the Wikipedia articles themselves.
 
 Summarizing the validation results:  
 The LLM-Retriever pair in CoZyRAG works as intended, correctly answering most questions, though it cannot generate large or highly detailed responses. Using a different dataset with more comprehensive answers and a larger LLM may improve this limitation.
