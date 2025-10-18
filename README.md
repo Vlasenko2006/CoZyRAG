@@ -38,7 +38,14 @@ The dataset consists of 89K simple Q/A pairs: each question is one sentence, eac
 
 ### Generalization Capabilities Without RAG
 
-Trained on a simple dataset without RAG, `GPT2 Distilled` generalizes well to unseen data, provided that similar questions exist in the dataset. For instance, if the dataset contains various questions like `What is the capital of X?` (where X is a country), the model learns to associate the question pattern with typical answers. During validation, if you ask `What is the capital of France?` and this exact question was not in the training set, but the model has seen sentences where `France`, `capital`, and `Paris` appear together, it may successfully infer the correct answer. However, if these words do not appear together—or at all—in the training set, the model is likely to fail, even though it was pretrained on a large corpus. This is precisely where RAG becomes important.
+Trained on a simple dataset without RAG, `GPT2 Distilled` generalizes well to unseen data, provided that similar questions exist in the dataset. For instance, if the dataset contains various questions like `What is the capital of X?` (where X is a country), the model learns to associate the question pattern with typical answers. During validation, if you ask `What is the capital of France?` and this exact question was not in the training set, but the model has seen sentences where `France`, `capital`, and `Paris` appear together, it may successfully infer the correct answer. However, if these words do not appear together—or at all—in the training set, the model is likely to fail, even though it was pretrained on a large corpus. This is precisely where RAG becomes important. Here is the example of the most coherent answer generated text **without RAG**:
+
+**Q: Describe the function of mitochondria.**  
+A: You will understand more about mitochondria, which serve a central role in health: your cells have not been able to form an anti-inflammatory immune system. As our mitochondria are no longer in operation by an immune system and should be well used for preventing cancer, stress, and overall health.
+
+**Q: What are black holes?**  
+Many stars have very different orbits relative to star body sizes. Most stars have many different orbits relative to star body size. Most stars have very different orbits relative to star body sizes.
+In order to calculate stars from the orbits we use a small number of different equations – The Number (TheNumber), The Number (TheNumber)) using four (I) to simplify things. For the first time it will be easy to use a different formula to calculate stars from the first set of equations. Our first estimate is just 1.16, 5.36 and we have to compute only five (P) star bodies at each possible orbit – The
 
 ### Generalization Capabilities With RAG
 
